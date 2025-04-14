@@ -1,13 +1,12 @@
 const API_KEY = "1234567890abcdef";
 
 function runUserScript(userInput) {
-    eval(userInput); // Dangerous: allows execution of arbitrary JS code
+    eval(userInput);
 }
 
 function displayMessage(req, res) {
     const userMessage = req.query.message;
-    res.send(`<html><body><h1>${userMessage}</h1></body></html>`); // XSS vulnerability
-}
+    res.send(`<html><body><h1>${userMessage}</h1></body></html>`);
 
 const express = require('express');
 const app = express();
